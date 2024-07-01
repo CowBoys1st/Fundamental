@@ -35,3 +35,43 @@ function getMessage(firstname) {
 }
 
 console.log(getMessage(12))
+
+//closure function
+function greetings(name) {
+    const defaultMessage = "Hello "
+
+    return function () {
+        return defaultMessage + name
+    }
+}
+
+const greetingDavid = greetings("David")
+console.log(greetingDavid())
+
+//currying function
+function multiplier(factor) {
+    return function (number) {
+        return factor * number
+    }
+}
+
+const mul3 = multiplier(3)
+const mul5 = multiplier(5)
+console.log(mul3(10))
+
+//recursive function
+function countDown (fromNumber) {
+    console.log(fromNumber)
+
+    let nextNumber = fromNumber + 200
+    if (nextNumber < 2000) {
+        countDown(nextNumber)
+    }
+}
+
+// countDown(200)
+
+//arrow function
+const sum1 = (a, b) => a + b
+
+console.log(sum1(10,234))
